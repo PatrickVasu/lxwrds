@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LXWRDS – App herunterladen</title>
+<meta name="description" content="Die offizielle App des JDM-Clubs LXWRDS – nur für Mitglieder.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0F1012">
+<meta property="og:title" content="LXWRDS – Club-App">
+<meta property="og:description" content="Die offizielle App des JDM-Clubs LXWRDS. Jetzt für Android herunterladen.">
+<meta property="og:image" content="icon-512.png">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Dela+Gothic+One&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0F1012;
+    --card: #16171A;
+    --line: #2A2C31;
+    --text: #F2F0EA;
+    --muted: #9C9EA6;
+    --accent: #FF6A1F;
+    --accent-ink: #120A05;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--text); }
+  body {
+    font-family: 'Barlow', system-ui, sans-serif;
+    min-height: 100dvh;
+    display: flex; justify-content: center;
+    background:
+      radial-gradient(1200px 500px at 50% -10%, rgba(255,106,31,0.18), transparent 60%),
+      repeating-linear-gradient(45deg, rgba(255,255,255,0.018) 0 2px, transparent 2px 6px),
+      var(--bg);
+  }
+  main { width: 100%; max-width: 460px; padding: 40px 16px 32px; display: flex; flex-direction: column; gap: 22px; }
+  .logo { width: 78%; max-width: 320px; margin: 8px auto 0; display: block; filter: drop-shadow(0 0 22px rgba(255,106,31,0.35)); }
+  .jp { text-align: center; color: var(--muted); letter-spacing: 0.3em; font-size: 13px; margin-top: -8px; }
+  h1 {
+    font-family: 'Dela Gothic One', sans-serif; font-weight: 400;
+    font-size: 26px; line-height: 1.15; text-align: center; margin: 4px 0 0; text-transform: uppercase;
+    text-shadow: 0 0 18px rgba(255,106,31,0.45);
+  }
+  .sub { text-align: center; color: var(--muted); font-size: 16px; margin: -10px 0 0; }
+  .btn {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: var(--accent); color: var(--accent-ink);
+    font-family: 'Dela Gothic One', sans-serif; font-size: 18px; text-transform: uppercase; letter-spacing: 0.03em;
+    text-decoration: none; padding: 18px 20px; border-radius: 14px;
+    box-shadow: 0 0 0 1px rgba(255,106,31,0.6), 0 10px 30px rgba(255,106,31,0.35);
+    transition: transform .12s ease, box-shadow .12s ease;
+  }
+  .btn:active { transform: scale(0.98); box-shadow: 0 0 0 1px rgba(255,106,31,0.6), 0 4px 14px rgba(255,106,31,0.35); }
+  .btn svg { width: 22px; height: 22px; }
+  form { display: flex; flex-direction: column; gap: 12px; }
+  label { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  input {
+    width: 100%; font: 600 18px 'Barlow', system-ui, sans-serif; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--text); background: #0B0C0E; border: 1.5px solid var(--line); border-radius: 12px; padding: 15px 16px; outline: none;
+  }
+  input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(255,106,31,0.18); }
+  button.btn { border: 0; cursor: pointer; width: 100%; }
+  button.btn[disabled] { opacity: 0.6; }
+  .msg { min-height: 20px; text-align: center; font-size: 14px; font-weight: 600; margin: -2px 0 0; }
+  .msg.err { color: #FF6B6B; }
+  .msg.ok { color: #5ED18A; }
+  .meta { text-align: center; color: var(--muted); font-size: 13px; margin-top: -10px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px; }
+  .card h2 { margin: 0 0 12px; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  ol { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; counter-reset: s; }
+  li { display: flex; gap: 12px; font-size: 16px; line-height: 1.4; counter-increment: s; }
+  li::before {
+    content: counter(s); flex: none; width: 28px; height: 28px; border-radius: 50%;
+    border: 1.5px solid var(--accent); color: var(--accent);
+    display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; margin-top: -2px;
+  }
+  b { color: var(--text); font-weight: 700; }
+  .note { font-size: 14px; color: var(--muted); line-height: 1.45; }
+  .note b { color: var(--text); }
+  footer { text-align: center; color: #5E6067; font-size: 12px; margin-top: 6px; }
+</style>
+</head>
+<body>
+<main>
+  <img class="logo" src="logo.png" alt="LXWRDS">
+  <div class="jp">俺たちは家族</div>
+
+  <h1>Die Club-App</h1>
+  <p class="sub">Events, Live-Karte, Chat, Garage – alles an einem Ort.</p>
+
+  <form id="f" class="card" autocomplete="off">
+    <label for="code">Einladungscode</label>
+    <input id="code" name="code" placeholder="z. B. LXWRDS-…" autocapitalize="characters" spellcheck="false" required>
+    <button class="btn" id="go" type="submit">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+      App herunterladen
+    </button>
+    <p class="msg" id="msg" role="status"></p>
+  </form>
+  <div class="meta">Für Android · immer die neueste Version</div>
+
+  <section class="card">
+    <h2>So geht's</h2>
+    <ol>
+      <li><span>Oben deinen <b>Einladungscode</b> eingeben und auf <b>„App herunterladen“</b> tippen.</span></li>
+      <li><span>Die Datei öffnen und <b>„Installieren“</b> tippen. Fragt Android, ob der Browser Apps installieren darf: <b>„Zulassen“</b>.</span></li>
+      <li><span>App öffnen, deinen Namen und denselben <b>Einladungscode</b> eingeben – fertig.</span></li>
+    </ol>
+  </section>
+
+  <p class="note">Die App ist <b>nur für Mitglieder</b> – den Einladungscode bekommst du von uns. Updates kommen danach automatisch direkt in der App.</p>
+
+  <footer>LXWRDS · JDM Club</footer>
+</main>
+<script>
+  const API = 'https://zfekitxvgwhzkaozczyc.supabase.co/functions/v1/download';
+  const f = document.getElementById('f'), input = document.getElementById('code'), btn = document.getElementById('go'), msg = document.getElementById('msg');
+  const fromUrl = new URLSearchParams(location.search).get('code');
+  if (fromUrl) input.value = fromUrl;
+  f.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const code = input.value.trim();
+    if (!code) return;
+    btn.disabled = true; msg.className = 'msg'; msg.textContent = 'Wird geprüft …';
+    try {
+      const r = await fetch(API + '?check=1&code=' + encodeURIComponent(code));
+      const d = await r.json();
+      if (d.ok && d.url) {
+        msg.className = 'msg ok'; msg.textContent = 'Passt! Download startet (Version ' + d.version + ') …';
+        location.href = d.url;
+      } else if (d.error === 'code') {
+        msg.className = 'msg err'; msg.textContent = 'Dieser Einladungscode ist ungültig.';
+      } else {
+        msg.className = 'msg err'; msg.textContent = 'Gerade keine Version verfügbar – bitte später nochmal.';
+      }
+    } catch {
+      msg.className = 'msg err'; msg.textContent = 'Keine Verbindung – bitte nochmal versuchen.';
+    } finally {
+      btn.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>
