@@ -80,6 +80,11 @@
   b { color: var(--text); font-weight: 700; }
   .note { font-size: 14px; color: var(--muted); line-height: 1.45; }
   .note b { color: var(--text); }
+  .ios { display: flex; flex-direction: column; gap: 14px; }
+  .ios h2 { margin-bottom: 0; }
+  .btn.ghost { background: transparent; color: var(--accent); box-shadow: 0 0 0 1.5px var(--accent); font-size: 15px; padding: 14px 16px; }
+  .link { color: var(--accent); font-weight: 700; }
+  body.is-ios #f, body.is-ios .meta, body.is-ios #android-steps { display: none; }
   footer { text-align: center; color: #5E6067; font-size: 12px; margin-top: 6px; }
 </style>
 </head>
@@ -100,10 +105,10 @@
     </button>
     <p class="msg" id="msg" role="status"></p>
   </form>
-  <div class="meta">Für Android · immer die neueste Version</div>
+  <div class="meta">Für Android · immer die neueste Version · iPhone: siehe unten</div>
 
-  <section class="card">
-    <h2>So geht's</h2>
+  <section class="card" id="android-steps">
+    <h2>Android – so geht's</h2>
     <ol>
       <li><span>Oben deinen <b>Einladungscode</b> eingeben und auf <b>„App herunterladen“</b> tippen.</span></li>
       <li><span>Die Datei öffnen und <b>„Installieren“</b> tippen. Fragt Android, ob der Browser Apps installieren darf: <b>„Zulassen“</b>.</span></li>
@@ -111,11 +116,22 @@
     </ol>
   </section>
 
+  <section class="card ios" id="iphone">
+    <h2>iPhone</h2>
+    <ol>
+      <li><span>In <b>Safari</b> öffnen: <a class="link" href="https://lxwrds.expo.app/">lxwrds.expo.app</a></span></li>
+      <li><span>Unten auf <b>„Teilen“</b> (□↑) tippen → <b>„Zum Home-Bildschirm“</b> → <b>„Hinzufügen“</b>.</span></li>
+      <li><span>LXWRDS über das neue Symbol öffnen, Namen und <b>Einladungscode</b> eingeben. Im Profil die <b>Benachrichtigungen</b> aktivieren.</span></li>
+    </ol>
+    <a class="btn ghost" href="https://lxwrds.expo.app/">iPhone-Version öffnen</a>
+  </section>
+
   <p class="note">Die App ist <b>nur für Mitglieder</b> – den Einladungscode bekommst du von uns. Updates kommen danach automatisch direkt in der App.</p>
 
   <footer>LXWRDS · JDM Club</footer>
 </main>
 <script>
+  if (/iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) document.body.classList.add('is-ios');
   const API = 'https://zfekitxvgwhzkaozczyc.supabase.co/functions/v1/download';
   const f = document.getElementById('f'), input = document.getElementById('code'), btn = document.getElementById('go'), msg = document.getElementById('msg');
   const fromUrl = new URLSearchParams(location.search).get('code');
